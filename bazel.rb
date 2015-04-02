@@ -8,7 +8,7 @@ class Bazel < Formula
 
   def install
     ENV.prepend_path "PATH", "#{HOMEBREW_PREFIX}/bin"
-    system "bash ./compile.sh"
+    system "./compile.sh"
     bin.install Dir["output/bazel"]
   end
 end
