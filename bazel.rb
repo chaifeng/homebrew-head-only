@@ -7,6 +7,7 @@ class Bazel < Formula
   depends_on "protobuf"
 
   def install
+    ENV.append "CFLAGS", "-std=c++11 -stdlib=libc++" if ENV.compiler == :clang
     ENV.prepend_path "PATH", "#{HOMEBREW_PREFIX}/bin"
     system "./compile.sh"
     bin.install "output/bazel"
