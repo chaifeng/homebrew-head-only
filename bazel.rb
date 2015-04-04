@@ -13,7 +13,7 @@ class Bazel < Formula
   end
 
   test do
-    system "touch", "WORKSPACE"
+    touch "WORKSPACE"
     system "bazel", "help"
   end
 end
