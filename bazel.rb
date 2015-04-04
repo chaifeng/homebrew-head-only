@@ -9,6 +9,11 @@ class Bazel < Formula
   def install
     ENV.prepend_path "PATH", "#{HOMEBREW_PREFIX}/bin"
     system "./compile.sh"
-    bin.install Dir["output/bazel"]
+    bin.install "output/bazel"
+  end
+
+  test do
+    system "touch", "WORKSPACE"
+    system "bazel", "help"
   end
 end
