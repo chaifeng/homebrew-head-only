@@ -2,6 +2,7 @@ class Bazel < Formula
   homepage "http://bazel.io"
   head "https://github.com/google/bazel.git"
 
+  depends_on :macos => :mavericks
   depends_on :java => "1.8+"
   depends_on "libarchive"
   depends_on "protobuf"
